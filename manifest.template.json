@@ -1,0 +1,42 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.29/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.29",
+  "version": "1.0.0",
+  "id": "__APP_ID__",
+  "developer": {
+    "name": "__DEVELOPER_NAME__",
+    "websiteUrl": "__DEVELOPER_WEBSITE_URL__",
+    "privacyUrl": "__DEVELOPER_PRIVACY_URL__",
+    "termsOfUseUrl": "__DEVELOPER_TERMS_URL__"
+  },
+  "name": {
+    "short": "__APP_SHORT_NAME__",
+    "full": "__APP_FULL_NAME__"
+  },
+  "description": {
+    "short": "Plan and manage Adobe Workfront work from Copilot Cowork",
+    "full": "Connect Copilot Cowork to Adobe Workfront through Adobe's remote MCP server to find, inspect, create, and update work according to each user's Workfront permissions."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#E21E2D",
+  "agentSkills": [
+    {
+      "folder": "./skills/workfront-operations"
+    }
+  ],
+  "agentConnectors": [
+    {
+      "id": "adobe-workfront",
+      "displayName": "Adobe Workfront",
+      "description": "Access projects, tasks, issues, documents, approvals, users, and other authorized Adobe Workfront data through Adobe's hosted MCP server.",
+      "toolSource": {
+        "remoteMcpServer": {
+          "mcpServerUrl": "https://mcp.workfront.adobe.com/mcp/v1/workfront"
+        }
+      }
+    }
+  ]
+}
